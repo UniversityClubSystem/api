@@ -1,6 +1,7 @@
 // https://stackoverflow.com/questions/42645548/using-import-in-nodejs-server
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 
 /**
  * GET  /                       # Api running
@@ -203,6 +204,6 @@ app.route('/api/user/:username/pic')
   })
 
 // We must use default user's pic and club's pic
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('App listening on port 3000!')
 })
