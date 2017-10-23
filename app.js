@@ -3,9 +3,9 @@ const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
 
-
 const app = express()
 const port = process.env.PORT || 3000
+const mongodb = require(__dirname + "/db/mongodb.js")
 
 /**
  * Middlewares
