@@ -2,6 +2,9 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
+const logger = require('morgan')
+
+app.use(logger('dev'))
 
 /**
  * GET  /                       # Api running
@@ -205,5 +208,5 @@ app.route('/api/user/:username/pic')
 
 // We must use default user's pic and club's pic
 app.listen(port, () => {
-  console.log('App listening on port 3000!')
+  console.log('App listening on port: ', port)
 })
