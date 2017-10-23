@@ -6,12 +6,12 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.PORT || 3000
 const mongodb = require(__dirname + "/db/mongodb.js")
-const AllModels = require(__dirname + '/models/allModels.js')
+const User = require(__dirname + '/models/user.js')
 
 // Mongodb and Models test
 let test = () => {
   console.log("Self execution!");
-  let newuser = new AllModels.User({
+  let newuser = new User({
     fullname: "ResAt Akcan",
     about:    "i was a child",
     pic:      "/pics/4312353.jpg",
