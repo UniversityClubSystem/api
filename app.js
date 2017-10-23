@@ -6,6 +6,28 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = process.env.PORT || 3000
 const mongodb = require(__dirname + "/db/mongodb.js")
+const AllModels = require(__dirname + '/models/allModels.js')
+
+// Mongodb and Models test
+let test = () => {
+  console.log("Self execution!");
+  let newuser = new AllModels.User({
+    fullname: "ResAt Akcan",
+    about:    "i was a child",
+    pic:      "/pics/4312353.jpg",
+    username: "resobyte",
+    password: "123456",
+    emails:   [ "resobyte@gmail.com" ]
+  })
+  newuser.save((err) => {
+    if (err) {
+        console.error(err)
+    } else {
+        console.log('Yeah, we created new user!')
+    }
+  })
+}
+test()
 
 /**
  * Middlewares
