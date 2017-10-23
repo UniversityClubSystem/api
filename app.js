@@ -1,10 +1,17 @@
 // https://stackoverflow.com/questions/42645548/using-import-in-nodejs-server
 const express = require('express')
+const logger = require('morgan')
+const bodyParser = require('body-parser')
+
+
 const app = express()
 const port = process.env.PORT || 3000
-const logger = require('morgan')
 
+/**
+ * Middlewares
+ */
 app.use(logger('dev'))
+app.use(bodyParser.json())
 
 /**
  * GET  /                       # Api running
