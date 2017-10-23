@@ -14,4 +14,4 @@ const userSchema = new Schema({
 
 
 // make this available to our users in our Node applications
-module.exports = userSchema
+module.exports = mongoose.model('User', userSchema)

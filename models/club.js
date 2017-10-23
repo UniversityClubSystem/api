@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const userSchema = require(__dirname + "/user.js")
-const blogSchema = require(__dirname + "/blog.js")
-const eventSchema = require(__dirname + "/event.js")
-
 // create a schema
 const clubSchema = new Schema({
   clupfullname: String,
@@ -12,12 +8,12 @@ const clubSchema = new Schema({
   pic:      String,
   clupname: { type: String, required: true, unique: true },
   emails:   [ String ],
-  members:  [ userSchema ],
-  admins:   [ userSchema ],
-  blogs:    [ blogSchema ],
-  events:   [ eventSchema ],
+  members:  [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+  admins:   [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+  blogs:    [{type: mongoose.Schema.Types.ObjectId, ref: 'Blog'}],
+  events:   [{type: mongoose.Schema.Types.ObjectId, ref: 'Event'}],
   created_at: { type: Date, default: Date.now }
 })
 
 // make this available to our users in our Node applications
-module.exports = clubSchema
+module.exports = mongoose.model('Club', clubSchema)
