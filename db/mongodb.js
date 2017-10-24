@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const configMongoDb = require(__dirname + '/../config/mongodb.js');
+const path = require('path')
+const configMongoDb = require(path.join(__dirname, '..', 'config', 'mongodb.js'));
 
 mongoose.connect(configMongoDb.url, err => {
   if (err) {

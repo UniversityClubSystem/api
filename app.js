@@ -1,11 +1,12 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const mongodb = require(__dirname + '/db/mongodb.js');
-const User = require(__dirname + '/models/user.js');
+const mongodb = require(path.join(__dirname, 'db', 'mongodb.js'));
+const User = require(path.join(__dirname, 'models', 'user.js'));
 
 let test = () => {
   console.log('Self execution!');
