@@ -1,7 +1,7 @@
 {
   "name": "university-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "UniversityClubSystem backend api",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,5 +15,15 @@
     "mongoose": "^4.12.4",
     "morgan": "^1.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "repository": {
+    "url": "https://github.com/UniversityClubSystem/api"
+  }
 }
