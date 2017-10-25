@@ -35,7 +35,7 @@ var usersRoutes = require("./routes/users");
 var indexRoutes = require("./routes/index");
 
 app.use(indexRoutes);
-app.use("/campgrounds", usersRoutes);
+app.use("/api/user", usersRoutes);
 app.use("/api/club", clubRoutes);
 
 app.listen(port, () => {
