@@ -4,7 +4,8 @@
   "description": "UniversityClubSystem backend api",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "lint": "./node_modules/.bin/eslint **/*.js"
   },
   "author": "",
   "license": "GPL-3.0",
