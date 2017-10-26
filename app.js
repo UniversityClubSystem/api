@@ -5,8 +5,10 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-git checkout devconst mongodb = require(path.join(__dirname, 'db', 'mongodb.js'));
+const mongodb = require(path.join(__dirname, 'db', 'mongodb.js'));
 const User = require(path.join(__dirname, 'models', 'user.js'));
+const clubRoutes = require(path.join(__dirname, 'routes', 'clubs'));
+const usersRoutes = require(path.join(__dirname, 'routes', 'users'));
 
 let test = () => {
   console.log('Self execution!');
@@ -29,12 +31,11 @@ let test = () => {
 test();
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
 
-var clubRoutes = require("./routes/clubs");
-var usersRoutes = require("./routes/users");
-var indexRoutes = require("./routes/index");
-
-app.use(indexRoutes);
+app.get('/', (req, res) => {
+  res.send('Api running!');
+});
 app.use("/api/user", usersRoutes);
 app.use("/api/club", clubRoutes);
 
