@@ -16,6 +16,7 @@ deploy:
   api_key:
     secure: 8c6ff897-6709-4936-bac7-c74ef30dd5dd
   on: dockerizing
+  app: clubsystemapi
 
 notifications:
   slack: universitekulup:8NUVUuPGozbZa3wvkUNsMeCn
