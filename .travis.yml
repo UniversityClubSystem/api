@@ -9,7 +9,7 @@ service:
 
 script:
   - npm run lint
-  - docker build -t club_api_v1
+  - docker build -t club_api_v1 .
   - docker ps
 
 notifications:
