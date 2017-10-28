@@ -17,6 +17,7 @@ deploy:
     secure: 8c6ff897-6709-4936-bac7-c74ef30dd5dd
   on: dockerizing
   app: clubsystemapi
+  skip_cleanup: true
 
 notifications:
   slack: universitekulup:8NUVUuPGozbZa3wvkUNsMeCn
