@@ -10,11 +10,12 @@ service:
 script:
   - npm run lint
   - docker build -t club_api_v1 .
-  - echo "Build Done"
-  - docker images
-  - echo "Images Done"
-  - docker ps
-  - echo "ps Done"
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 8c6ff897-6709-4936-bac7-c74ef30dd5dd
+  on: dockerizing
 
 notifications:
   slack: universitekulup:8NUVUuPGozbZa3wvkUNsMeCn
