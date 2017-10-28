@@ -58,4 +58,4 @@ typings/
 .env
 
 # Project config file
-config.js
+# config.js
