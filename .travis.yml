@@ -10,7 +10,11 @@ service:
 script:
   - npm run lint
   - docker build -t club_api_v1 .
+  - echo "Build Done"
+  - docker images
+  - echo "Images Done"
   - docker ps
+  - echo "ps Done"
 
 notifications:
   slack: universitekulup:8NUVUuPGozbZa3wvkUNsMeCn
