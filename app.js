@@ -13,12 +13,12 @@ require(path.join(__dirname, 'db', 'mongodb.js'));
 let test = () => {
   console.log('Self execution!');
   let newuser = new User({
-    fullname: 'ResAt Akcan',
-    about: 'i was a child',
-    pic: '/pics/4312353.jpg',
-    username: 'resobyte',
-    password: '123456',
-    emails: ['resobyte@gmail.com']
+    fullname: 'Ömrüm Baki Temiz',
+    about: 'ololololololol',
+    pic: '/pics/43123532.jpg',
+    username: 'omrumbakitemiz',
+    password: 'password1234',
+    emails: ['omrumbakitemiz@gmail.com']
   });
   newuser.save(err => {
     if (err) {
@@ -28,7 +28,7 @@ let test = () => {
     }
   });
 };
-test();
+// test();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
