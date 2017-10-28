@@ -5,10 +5,10 @@ const path = require('path');
 
 const app = express();
 const port = process.env.PORT || 3000;
-const mongodb = require(path.join(__dirname, 'db', 'mongodb.js'));
 const User = require(path.join(__dirname, 'models', 'user.js'));
 const clubRoutes = require(path.join(__dirname, 'routes', 'clubs'));
 const usersRoutes = require(path.join(__dirname, 'routes', 'users'));
+require(path.join(__dirname, 'db', 'mongodb.js'));
 
 let test = () => {
   console.log('Self execution!');
@@ -36,8 +36,8 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
   res.send('Api running!');
 });
-app.use("/api/user", usersRoutes);
-app.use("/api/club", clubRoutes);
+app.use('/api/user', usersRoutes);
+app.use('/api/club', clubRoutes);
 
 app.listen(port, () => {
   console.log('App listening on port: ', port);
